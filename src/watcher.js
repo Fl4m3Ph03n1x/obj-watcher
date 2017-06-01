@@ -21,7 +21,7 @@ const CallbackNotAFunction = objId =>
 /**
  *  @public
  *  @author Pedro Miguel P. S. Martins
- *  @version 1.1.0
+ *  @version 1.1.1
  *  @module watcher
  *  @desc   Watches over changes in objects and executes callbacks when those 
  *          changes happen.
@@ -81,8 +81,8 @@ const watcherFactory = () => {
      * 
      *  @description    This function returns a **clone** of the object with the
      *                  given object id. This happens so as to minize side 
-     *                  effects and prevents direct object to the object being 
-     *                  watched.
+     *                  effects and prevents direct object manipulation to the 
+     *                  object being watched.
      */
     const get = objId => {
         if (!isObjWatched(objId))
