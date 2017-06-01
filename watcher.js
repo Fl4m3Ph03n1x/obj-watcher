@@ -1,50 +1,77 @@
 "use strict";
 
-const autobahn = require( "autobahn" );
+const errorFactory = ( name, message ) => {
+    const error = new Error();
+    error.message = message;
+    error.name = name;
+    return error;
+};
 
-const crossbarServer = () => {
+const ObjectNotWatched = ( objName ) =>
+    errorFactory("ObjectNotWatched", `Not watching Object with name ${objName}`);
 
-    let connection;
+const ObjectAlreadyWatched = ( objName ) =>
+    errorFactory("ObjectAlreadyWatched", `Already watching Object with name ${objName}`);
 
-    const connect = function ( connectOpts ) {
-        return new Promise( resolve => {
-            connection = new autobahn.Connection( connectOpts );
-            connection.onopen = () => resolve();
-            connection.open();
+const watcherFactory = () => {
+
+    const watchMap = new Map();
+
+    const watch = function ( objName, obj ) {
+        if ( isObjWatched( objName ) )
+            throw ObjectAlreadyWatched( objName );
+
+        watchMap.set( objName, {
+            obj: obj,
+            onChange: () => {}
         } );
     };
 
-    const disconnect = function () {
-        return new Promise( resolve => {
-            connection.onclose = () => resolve();
-            connection.close();
-        } );
+    const unwatch = function ( objName ) {
+        if ( !isObjWatched( objName ) )
+            throw ObjectNotWatched( objName );
+        watchMap.delete( objName );
     };
 
-    const getSession = function () {
-        return connection.session;
-    };
-    const getConnection = function () {
-        return connection;
+    const get = function ( objName ) {
+        if ( !isObjWatched( objName ) )
+            throw ObjectNotWatched( objName );
+        return Object.assign( {}, watchMap.get( objName ).obj );
     };
 
-    const registerRPCs = async function ( rpcList ) {
-        for ( const rpc of rpcList ) {
-            await connection.session.register( rpc.name, rpc.func )
-                .catch( err => {
-                    throw new Error( `Failed to register "${rpc.name}":
-                      ${JSON.stringify(err)}` );
-                } );
-        }
+    const set = function ( objName, newObj ) {
+        if ( !isObjWatched( objName ) )
+            throw ObjectNotWatched( objName );
+
+        const entry = watchMap.get( objName );
+        entry.obj = Object.assign( {}, newObj );
+        entry.onChange( entry.obj );
     };
+
+    const setOnChange = function ( objName, newFn ) {
+        if ( !isObjWatched( objName ) )
+            throw ObjectNotWatched( objName );
+
+        const entry = watchMap.get( objName );
+        entry.onChange = newFn;
+    };
+
+    const reset = function () {
+        watchMap.clear();
+    };
+
+    const isObjWatched = objName => watchMap.has( objName );
 
     return Object.freeze( {
-        connect,
-        disconnect,
-        getSession,
-        getConnection,
-        registerRPCs
+        watch,
+        unwatch,
+        setOnChange,
+        get,
+        set,
+        reset
     } );
 };
 
-module.exports = crossbarServer;
+module.exports = watcherFactory;
+module.exports.ObjAlreadyWatchedException = ObjectAlreadyWatched;
+module.exports.ObjNotWatchedException = ObjectNotWatched;
