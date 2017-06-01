@@ -1,0 +1,36 @@
+{
+  "name": "obj-watcher",
+  "version": "1.0.0",
+  "description": "Small library that watches over changes in objects and notifies interested parties.",
+  "main": "watcher.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fl4m3Ph03n1x/obj-watcher.git"
+  },
+  "keywords": [
+    "watch",
+    "object",
+    "oberserver",
+    "notify",
+    "watcher"
+  ],
+  "author": "Pedro Miguel Pereira Serrano Martins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fl4m3Ph03n1x/obj-watcher/issues"
+  },
+  "homepage": "https://github.com/Fl4m3Ph03n1x/obj-watcher#readme",
+  "devDependencies": {
+    "chai": "^4.0.1",
+    "jsdoc": "^3.4.3",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.2"
+  }
+}
