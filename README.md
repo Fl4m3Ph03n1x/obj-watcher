@@ -27,6 +27,26 @@ makes you aware that you are dealing with a watched object.
 
 # How to use `watcher.js` ?
 
+## Install 
+
+Run:
+
+ - `npm install obj-watcher --save`
+
 ## API
+
+`watcher.js` offers the following methods that you can use.
+
+### watch
+
+### unwatch
+
+### setOnChange
+
+### get
+
+### set
+
+### reset
 
 ## Examples

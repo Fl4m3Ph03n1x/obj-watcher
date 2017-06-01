@@ -1,14 +1,15 @@
 {
   "name": "obj-watcher",
   "version": "1.0.0",
-  "description": "Small library that watches over changes in objects and notifies interested parties.",
+  "description": "Small library that watches over changes in objects and executes callbacks.",
   "main": "watcher.js",
   "directories": {
     "doc": "docs",
     "test": "test"
   },
   "scripts": {
-    "test": "NODE_ENV=test nyc mocha --reporter spec test/*_spec.js || true"
+    "test": "NODE_ENV=test nyc mocha --reporter spec test/*_spec.js || true",
+    "doc": "./node_modules/.bin/jsdoc ./src/*.js -d ./docs -t ./node_modules/jsdoc/templates/docdash/ -R README.md"
   },
   "repository": {
     "type": "git",
@@ -29,9 +30,13 @@
   "homepage": "https://github.com/Fl4m3Ph03n1x/obj-watcher#readme",
   "devDependencies": {
     "chai": "^4.0.1",
+    "docdash": "^0.4.0",
     "jsdoc": "^3.4.3",
     "mocha": "^3.4.2",
     "nyc": "^11.0.1",
     "sinon": "^2.3.2"
+  },
+  "dependencies": {
+    "lodash.isfunction": "^3.0.8"
   }
 }
