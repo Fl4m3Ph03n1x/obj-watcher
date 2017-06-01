@@ -21,7 +21,7 @@ const CallbackNotAFunction = objId =>
 /**
  *  @public
  *  @author Pedro Miguel P. S. Martins
- *  @version 1.0.0
+ *  @version 1.1.0
  *  @module watcher
  *  @desc   Watches over changes in objects and executes callbacks when those 
  *          changes happen.
@@ -117,7 +117,7 @@ const watcherFactory = () => {
     /**
      *  @public 
      *  @func   setOnChange
-     *  @param  {Object}    objId       The id of teh object to which we want to
+     *  @param  {Object}    objId       The id of the object to which we want to
      *                                  attach a callback.
      *  @param  {Function}  callback    The callback to be executed when the 
      *                                  object changes via the `set` method.

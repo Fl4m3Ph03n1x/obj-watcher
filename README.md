@@ -37,16 +37,25 @@ Run:
 
 `watcher.js` offers the following methods that you can use.
 
-### watch
+ - watch
+ - unwatch
+ - setOnChange
+ - get
+ - set
+ - reset
 
-### unwatch
+For more information about them you can read the documentation on the library's
+[official page](https://fl4m3ph03n1x.github.io/obj-watcher/).
 
-### setOnChange
+## Example
 
-### get
+Watch an object and `console.log` a message when it changes:
 
-### set
-
-### reset
-
-## Examples
+        const watcherFactory = require("obj-watcher.js");
+        const watcher = watcherFactory();
+        
+        watcher.watch("food", {fruit: "bananas"}); //watch it!
+        watcher.setOnChange("food", newObj => console.log(`I like ${newObj.fruit} better!`));
+        
+        watcher.set("food", {fruit: "oranges"});
+        //I like oranges better!
