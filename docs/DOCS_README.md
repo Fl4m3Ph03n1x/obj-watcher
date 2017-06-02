@@ -42,21 +42,7 @@ Run:
 
  - `npm install obj-watcher --save`
 
-## API
-
-`obj-watcher.js` offers the following methods that you can use.
-
- - [watch](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~watch)
- - [unwatch](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~unwatch)
- - [setOnChange](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~setOnChange)
- - [get](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~get)
- - [set](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~set)
- - [reset](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~reset)
-
-For more information about them you can read the documentation on the library's
-[official page](https://fl4m3ph03n1x.github.io/obj-watcher/).
-
-## Example
+## Usage Cases
 
 Watch an object and `console.log` a message when it changes:
 
@@ -68,3 +54,37 @@ Watch an object and `console.log` a message when it changes:
         
         watcher.set("food", {fruit: "oranges"});
         //I like oranges better!
+        
+
+Watch an object and `console.log` a message when it changes and then unwatch it:
+
+        const watcherFactory = require("obj-watcher");
+        const watcher = watcherFactory();
+        
+        watcher.watch("food", {fruit: "bananas"}); //watch it!
+        watcher.setOnChange("food", newObj => console.log(`I like ${newObj.fruit} better!`));
+        
+        watcher.set("food", {fruit: "oranges"});
+        //I like oranges better!
+        
+        watcher.unwatch("food");
+        watcher.get("food");
+        //throws error !
+        
+`obj-watcher` can also be used with testing libraries like [sinon](http://sinonjs.org/)
+to test if objects were changed:
+        
+        const assert = require("assert");
+        const sinon = require("sinon");
+        const watcherFactory = require("obj-watcher");
+        const watcher = watcherFactory();
+        
+        const spy = sinon.spy();
+        watcher.watch("food", {fruit: "bananas"}); //watch it!
+        watcher.setOnChange("food", spy);
+        
+        watcher.set("food", {fruit: "oranges"});
+        //I like oranges better!
+        
+        assert.equal(spy.called, true);
+        
