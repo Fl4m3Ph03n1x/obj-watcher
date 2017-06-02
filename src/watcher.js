@@ -21,7 +21,7 @@ const CallbackNotAFunction = objId =>
 /**
  *  @public
  *  @author Pedro Miguel P. S. Martins
- *  @version 1.2.2
+ *  @version 1.2.3
  *  @module watcher
  *  @desc   Watches over changes in objects and executes callbacks when those 
  *          changes happen.
