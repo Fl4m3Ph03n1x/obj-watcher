@@ -1,6 +1,6 @@
 {
   "name": "obj-watcher",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Small library that watches over changes in objects and executes callbacks.",
   "main": "watcher.js",
   "directories": {
@@ -10,7 +10,7 @@
   "main": "./src/watcher.js",
   "scripts": {
     "test": "NODE_ENV=test nyc mocha --reporter spec test/*_spec.js || true",
-    "doc": "./node_modules/.bin/jsdoc ./src/*.js -d ./docs -t ./node_modules/jsdoc/templates/docdash/ -R DOCS_README.md"
+    "doc": "./node_modules/.bin/jsdoc ./src/*.js -d ./docs -t ./node_modules/jsdoc/templates/docdash/ -R ./docs/DOCS_README.md"
   },
   "repository": {
     "type": "git",
