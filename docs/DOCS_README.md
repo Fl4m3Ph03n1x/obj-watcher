@@ -87,4 +87,10 @@ to test if objects were changed:
         //I like oranges better!
         
         assert.equal(spy.called, true);
-        
+
+## Bugs and issues
+
+If you have any trouble or find any issues with the package, feel free to let me
+know in our issue tracker: 
+
+ - https://github.com/Fl4m3Ph03n1x/obj-watcher/issues

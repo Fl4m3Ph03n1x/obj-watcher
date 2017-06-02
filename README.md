@@ -68,3 +68,10 @@ Watch an object and `console.log` a message when it changes:
         
         watcher.set("food", {fruit: "oranges"});
         //I like oranges better!
+        
+## Bugs and issues
+
+If you have any trouble or find any issues with the package, feel free to let me
+know in our issue tracker: 
+
+ - https://github.com/Fl4m3Ph03n1x/obj-watcher/issues
