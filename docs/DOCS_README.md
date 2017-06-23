@@ -8,8 +8,10 @@
                            |__/                                              
 
 
+
 [![NPM](https://nodei.co/npm/obj-watcher.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/obj-watcher/)
 
+[![Build Status](https://travis-ci.org/Fl4m3Ph03n1x/obj-watcher.svg?branch=master)](https://travis-ci.org/Fl4m3Ph03n1x/obj-watcher)
 [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
 
 # What is `obj-watcher.js` ?
