@@ -17,7 +17,7 @@
 # What is `obj-watcher.js` ?
 
 `watcher.js` is a small library that allows you to take action when a watched
-variables changes and to execute callbacks when it happens.
+variable changes and to execute callbacks when it happens.
 
 # Why `obj-watcher.js` ?
 
