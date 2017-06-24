@@ -10,7 +10,8 @@
   "scripts": {
     "lint": "node_modules/.bin/goodparts path/to/files/for/linting",
     "test": "NODE_ENV=test nyc mocha --reporter spec test/*_spec.js || true",
-    "doc": "./node_modules/.bin/jsdoc ./src/*.js -d ./docs -t ./node_modules/docdash -R ./docs/DOCS_README.md"
+    "doc": "./node_modules/.bin/jsdoc ./src/*.js -d ./docs -t ./node_modules/docdash -R ./docs/DOCS_README.md",
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov -t 1f88ca54-0113-48ff-bddf-c80a99d321fd"
   },
   "repository": {
     "type": "git",
