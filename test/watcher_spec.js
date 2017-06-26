@@ -1,13 +1,12 @@
 "use strict";
 
-const watcherFactory = require("../src/watcher.js");
 const expect = require("chai")
     .expect;
 const sinon = require("sinon");
 
 describe("watcher", () => {
 
-    const watcher = Object.assign({}, watcherFactory());
+    const watcher = Object.assign({}, require("../src/watcher.js"));
     const testObj = {
         online: false
     };
@@ -63,30 +62,42 @@ describe("watcher", () => {
 
     it("should 'set' the callback with the function we pass", () => {
         watcher.watch("status", testObj);
-        const spy = sinon.spy(watcher, "setOnChange");
+        const spy = sinon.spy(watcher, "onChange");
 
-        watcher.setOnChange("status", callback);
+        watcher.onChange("status", callback);
 
         expect(spy.calledOnce).to.be.true;
         expect(spy.calledWith("status", callback)).to.be.true;
     });
 
     it("should throw if we try to'set' the callback for a non-watched object", () => {
-        expect(watcher.setOnChange.bind(null, "bananas", callback)).to.throw(Error);
+        expect(watcher.onChange.bind(null, "bananas", callback)).to.throw(Error);
     });
 
     it("should throw if the callback parameter is not a function", () => {
         watcher.watch("status", testObj);
-        expect(watcher.setOnChange.bind(null, "status", "notACallback!")).to.throw(Error);
+        expect(watcher.onChange.bind(null, "status", "notACallback!")).to.throw(Error);
     });
 
     it("should call the callback when the object changes via 'set'", () => {
         watcher.watch("status", testObj);
         const spy = sinon.spy();
-        watcher.setOnChange("status", spy);
+        watcher.onChange("status", spy);
         watcher.set("status", {});
 
         expect(spy.called).to.be.true;
+    });
+
+    it("should call the callback with both the old object, and the new one", done => {
+        watcher.watch("status", testObj);
+        const newTestObj = {};
+        
+        watcher.onChange("status", (oldObj, newObj) => {
+            expect(oldObj).to.eql(testObj);
+            expect(newObj).to.eql(newTestObj);
+            done();
+        });
+        watcher.set("status", newTestObj);
     });
 
     it("should reset", () => {

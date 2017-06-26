@@ -3,6 +3,70 @@
 const isFunction = require("lodash.isfunction");
 
 /**
+ * @callback onChangeCallback
+ * @param {Object}  oldObj  The old object being watched. 
+ * @param {Object}  newObj  The new object that is now being watched.
+ */
+
+/**
+ *  @typedef {Object}    Id The unique id of the object we want to  watch over.
+ *                          Can be anything, althout I strongly recommend it to 
+ *                          be a primitive type, such as a <code>string</code>, 
+ *                          or a <code>number</code>.
+ */
+
+/**
+ *  @typedef    {Error}     ObjectNotWatched
+ *  @property   {string}    name=ObjectNotWatched   Name of the error.
+ *  @property   {string}    message                 Message of the error.
+ * 
+ *  @description    Error thrown when one tries to perform an action on an 
+ *                  object that was not previously registered using 
+ *                  <code>watch</code>.
+ * 
+ * @example 
+ * 
+ * const watcher = require("obj-watcher");
+ * 
+ * watcher.unwatch("status"); //Throw, "status" is not watched.
+ */
+
+/**
+ *  @typedef    {Error}     ObjectAlreadyWatched
+ *  @property   {string}    name=ObjectAlreadyWatched   Name of the error.
+ *  @property   {string}    message                     Message of the error.
+ * 
+ *  @description    Error thrown when one tries to re-watch an object that was 
+ *                  already being watched. This means that you are trying to 
+ *                  watch an object and that the library already has something
+ *                  with the given {Id}.
+ * 
+ * @example 
+ * 
+ * const watcher = require("obj-watcher");
+ * 
+ * watcher.watch("status", { online: true });   
+ * watcher.watch("status", { fruit: "banana" }); //Throws, key "status" is already under use.
+ */
+
+/**
+ *  @typedef    {Error}     CallbackNotAFunction
+ *  @property   {string}    name=CallbackNotAFunction   Name of the error.
+ *  @property   {string}    message                     Message of the error.
+ * 
+ *  @description    Error throw when one calls <code>onChange</code> passing a  
+ *                  callback parameter that is not a function.
+ * 
+ * @example 
+ * 
+ * const watcher = require("obj-watcher");
+ * 
+ * watcher.watch("status", { online: true });   
+ * //Throws, second parameter should be of type "function".
+ * watcher.onChange("status", "I am not a function!");    
+ */
+
+/**
  * @private
  * @func    errorFactory
  * @param   {string}        name    The name of the error to be created.
@@ -22,7 +86,7 @@ const errorFactory = (name, message) => {
 /**
  *  @private
  *  @func       objectNotWatched
- *  @param      {Object}            objId   Id of the object that caused the 
+ *  @param      {Id}                objId   Id of the object that caused the 
  *                                          error.
  *  @returns    {Error}
  * 
@@ -36,7 +100,7 @@ const objectNotWatched = objId =>
 /**
  *  @private
  *  @func       objectAlreadyWatched
- *  @param      {Object}            objId   Id of the object that caused the 
+ *  @param      {Id}            objId       Id of the object that caused the 
  *                                          error.
  *  @returns    {Error}
  * 
@@ -50,7 +114,7 @@ const objectAlreadyWatched = objId =>
 /**
  *  @private
  *  @func       callbackNotAFunction
- *  @param      {Object}            objId   Id of the object that caused the 
+ *  @param      {Id}            objId   Id of the object that caused the 
  *                                          error.
  *  @returns    {Error}
  * 
@@ -64,7 +128,7 @@ const callbackNotAFunction = objId =>
 /**
  *  @public
  *  @author Pedro Miguel P. S. Martins
- *  @version 1.2.5
+ *  @version 2.0.0
  *  @module watcher
  *  @desc   Watches over changes in objects and executes callbacks when those 
  *          changes happen.
@@ -76,16 +140,14 @@ const watcherFactory = () => {
     /**
      *  @public 
      *  @func   watch
-     *  @param  {Object} objId          The unique id of the object we want to 
+     *  @param  {Id} objId              The unique id of the object we want to 
      *                                  watch over. 
      *  @param  {Object} obj            The object that will be watched.
      *  @throws {ObjectAlreadyWatched}  If the watch list is already watching an 
-     *                                  object with the given `objId`.
+     *                                  object with the given <code>objId</code>.
      * 
      *  @description    Adds the following object to the watchlist with the 
-     *                  given id. Although `objId`can be anyting, including 
-     *                  another object, it is recommended to use a Number or a 
-     *                  String instead.
+     *                  given id.
      */
     const watch = (objId, obj) => {
         if (isObjWatched(objId))
@@ -93,6 +155,14 @@ const watcherFactory = () => {
 
         watchMap.set(objId, {
             obj: obj,
+
+            /**
+             *  @private 
+             *  @function   onChange
+             *  
+             *  @description    Default function that runs for every new watched 
+             *                  object. Does nothing and is a place hodler.
+             */
             onChange: () => {}
         });
     };
@@ -100,11 +170,11 @@ const watcherFactory = () => {
     /**
      *  @public 
      *  @func   unwatch
-     *  @param  {Object}    objId       The object that will be unwatched.
+     *  @param  {Id}    objId           The object that will be unwatched.
      *  @throws {ObjectNotWatched}      If the watch list does not contain any 
-     *                                  object with the given `objId`.
+     *                                  object with the given <code>objId</code>.
      * 
-     *  @description    Removes the object with the given `objId` from the watch
+     *  @description    Removes the object with the given <code>objId</code> from the watch
      *                  list. It also deletes all callbacks associated with it.
      */
     const unwatch = objId => {
@@ -116,11 +186,11 @@ const watcherFactory = () => {
     /**
      *  @public 
      *  @func       get
-     *  @param      {Object}    objId   The unique id of the object we want to 
+     *  @param      {Id}        objId   The unique id of the object we want to 
      *                                  get.
      *  @returns    {Object}            
      *  @throws {ObjectNotWatched}      If the watch list does not contain any 
-     *                                  object with the given `objId`.
+     *                                  object with the given <code>objId</code>.
      * 
      *  @description    This function returns a **clone** of the object with the
      *                  given object id. This happens so as to minize side 
@@ -136,11 +206,11 @@ const watcherFactory = () => {
     /**
      *  @public 
      *  @function   set
-     *  @param      {Object}    objId   The id of the object we want to replace.
+     *  @param      {Id}        objId   The id of the object we want to replace.
      *  @param      {Object}    newObj  The new object that will replace the 
      *                                  current object with the id.
      *  @throws {ObjectNotWatched}      If the watch list does not contain any 
-     *                                  object with the given `objId`.
+     *                                  object with the given <code>objId</code>.
      * 
      *  @description    Replaces the object currently being watched with the 
      *                  given one. If your code has references affecting the old
@@ -153,27 +223,30 @@ const watcherFactory = () => {
             throw objectNotWatched(objId);
 
         const entry = watchMap.get(objId);
+        const oldObj = Object.assign({}, entry.obj);
         entry.obj = Object.assign({}, newObj);
-        entry.onChange(entry.obj);
+        entry.onChange(oldObj, entry.obj);
     };
 
     /**
      *  @public 
-     *  @func   setOnChange
-     *  @param  {Object}    objId       The id of the object to which we want to
-     *                                  attach a callback.
-     *  @param  {Function}  callback    The callback to be executed when the 
-     *                                  object changes via the `set` method.
-     *  @throws {ObjectNotWatched}      If the watch list does not contain any 
-     *                                  object with the given `objId`.
-     *  @throws {CallbackNotAFunction}  If the provided callback parameter is not
-     *                                  a function.
+     *  @func   onChange
+     *  @param  {Id}    objId                   The id of the object to which we 
+     *                                          want to attach a callback.
+     *  @param  {onChangeCallback}  callback    The callback to be executed when 
+     *                                          the object changes via the 
+     *                                          <code>set</code> method.
+     *  @throws {ObjectNotWatched}              If the watch list does not 
+     *                                          contain any object with the 
+     *                                          given <code>objId</code>.
+     *  @throws {CallbackNotAFunction}          If the provided callback 
+     *                                          parameter is not a function.
      * 
      *  @description    Sets the callback for the given object. This callback 
      *                  will be executed everytime the object changes via 
-     *                  the `set` method.
+     *                  the <code>set</code> method.
      */
-    const setOnChange = (objId, callback) => {
+    const onChange = (objId, callback) => {
         if (!isObjWatched(objId))
             throw objectNotWatched(objId);
 
@@ -200,11 +273,11 @@ const watcherFactory = () => {
     return Object.freeze({
         watch,
         unwatch,
-        setOnChange,
+        onChange,
         get,
         set,
         reset
     });
 };
 
-module.exports = watcherFactory;
+module.exports = watcherFactory();

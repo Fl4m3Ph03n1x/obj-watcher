@@ -67,11 +67,10 @@ For more information about them you can read the documentation on the library's
 
 Watch an object and `console.log` a message when it changes:
 
-        const watcherFactory = require("obj-watcher");
-        const watcher = watcherFactory();
+        const watcher = require("obj-watcher");
 
         watcher.watch("food", {fruit: "bananas"}); //watch it!
-        watcher.setOnChange("food", newObj => console.log(`I like ${newObj.fruit} better!`));
+        watcher.setOnChange("food", (oldObj, newObj) => console.log(`I like ${newObj.fruit} better!`));
 
         watcher.set("food", {fruit: "oranges"});
         //I like oranges better!

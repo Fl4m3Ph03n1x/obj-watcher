@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-watcher.html">watcher</a><ul class='methods'><li data-type='method'><a href="module-watcher.html#~get">get</a></li><li data-type='method'><a href="module-watcher.html#~reset">reset</a></li><li data-type='method'><a href="module-watcher.html#~set">set</a></li><li data-type='method'><a href="module-watcher.html#~setOnChange">setOnChange</a></li><li data-type='method'><a href="module-watcher.html#~unwatch">unwatch</a></li><li data-type='method'><a href="module-watcher.html#~watch">watch</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-watcher.html">watcher</a><ul class='methods'><li data-type='method'><a href="module-watcher.html#~get">get</a></li><li data-type='method'><a href="module-watcher.html#~onChange">onChange</a></li><li data-type='method'><a href="module-watcher.html#~reset">reset</a></li><li data-type='method'><a href="module-watcher.html#~set">set</a></li><li data-type='method'><a href="module-watcher.html#~unwatch">unwatch</a></li><li data-type='method'><a href="module-watcher.html#~watch">watch</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <div id="main">
@@ -64,13 +64,13 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line64">line 64</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line128">line 128</a>
     </li></ul></dd>
     
 
     
     <dt class="tag-version">Version:</dt>
-    <dd class="tag-version"><ul class="dummy"><li>1.2.5</li></ul></dd>
+    <dd class="tag-version"><ul class="dummy"><li>2.0.0</li></ul></dd>
     
 
     
@@ -173,7 +173,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line116">line 116</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line186">line 186</a>
     </li></ul></dd>
     
 
@@ -260,7 +260,7 @@
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type"><a href="global.html#Id">Id</a></span>
 
 
             
@@ -297,7 +297,7 @@
     <dt>
         <div class="param-desc">
         If the watch list does not contain any 
-                                 object with the given `objId`.
+                                 object with the given <code>objId</code>.
         </div>
     </dt>
     <dd></dd>
@@ -308,7 +308,7 @@
             </dt>
             <dd>
                 
-<span class="param-type">ObjectNotWatched</span>
+<span class="param-type"><a href="global.html#ObjectNotWatched">ObjectNotWatched</a></span>
 
 
             </dd>
@@ -346,6 +346,226 @@
 
     
 
+    <h4 class="name" id="~onChange"><span class="type-signature">(inner) </span>onChange<span class="signature">(objId, callback)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line231">line 231</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Sets the callback for the given object. This callback 
+                 will be executed everytime the object changes via 
+                 the <code>set</code> method.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>objId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Id">Id</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The id of the object to which we 
+                                         want to attach a callback.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#onChangeCallback">onChangeCallback</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The callback to be executed when 
+                                         the object changes via the 
+                                         <code>set</code> method.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If the watch list does not 
+                                         contain any object with the 
+                                         given <code>objId</code>.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="global.html#ObjectNotWatched">ObjectNotWatched</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If the provided callback 
+                                         parameter is not a function.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="global.html#CallbackNotAFunction">CallbackNotAFunction</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="~reset"><span class="type-signature">(inner) </span>reset<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
@@ -358,7 +578,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line187">line 187</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line260">line 260</a>
     </li></ul></dd>
     
 
@@ -443,7 +663,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line136">line 136</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line206">line 206</a>
     </li></ul></dd>
     
 
@@ -531,7 +751,7 @@
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type"><a href="global.html#Id">Id</a></span>
 
 
             
@@ -591,7 +811,7 @@
     <dt>
         <div class="param-desc">
         If the watch list does not contain any 
-                                 object with the given `objId`.
+                                 object with the given <code>objId</code>.
         </div>
     </dt>
     <dd></dd>
@@ -602,7 +822,7 @@
             </dt>
             <dd>
                 
-<span class="param-type">ObjectNotWatched</span>
+<span class="param-type"><a href="global.html#ObjectNotWatched">ObjectNotWatched</a></span>
 
 
             </dd>
@@ -613,224 +833,6 @@
 
 
     
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="~setOnChange"><span class="type-signature">(inner) </span>setOnChange<span class="signature">(objId, callback)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line160">line 160</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    Sets the callback for the given object. This callback 
-                 will be executed everytime the object changes via 
-                 the `set` method.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>objId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The id of the object to which we want to
-                                 attach a callback.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The callback to be executed when the 
-                                 object changes via the `set` method.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Throws:</h5>
-<ul>
-        <li>
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        If the watch list does not contain any 
-                                 object with the given `objId`.
-        </div>
-    </dt>
-    <dd></dd>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">ObjectNotWatched</span>
-
-
-            </dd>
-        </dl>
-    </dt>
-    <dd></dd>
-</dl>
-
-</li>
-    
-        <li>
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        If the provided callback parameter is not
-                                 a function.
-        </div>
-    </dt>
-    <dd></dd>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">CallbackNotAFunction</span>
-
-
-            </dd>
-        </dl>
-    </dt>
-    <dd></dd>
-</dl>
-
-</li>
-    </ul>
 
 
 
@@ -852,7 +854,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line100">line 100</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line170">line 170</a>
     </li></ul></dd>
     
 
@@ -892,7 +894,7 @@
 
 
 <div class="description">
-    Removes the object with the given `objId` from the watch
+    Removes the object with the given <code>objId</code> from the watch
                  list. It also deletes all callbacks associated with it.
 </div>
 
@@ -937,7 +939,7 @@
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type"><a href="global.html#Id">Id</a></span>
 
 
             
@@ -973,7 +975,7 @@
     <dt>
         <div class="param-desc">
         If the watch list does not contain any 
-                                 object with the given `objId`.
+                                 object with the given <code>objId</code>.
         </div>
     </dt>
     <dd></dd>
@@ -984,7 +986,7 @@
             </dt>
             <dd>
                 
-<span class="param-type">ObjectNotWatched</span>
+<span class="param-type"><a href="global.html#ObjectNotWatched">ObjectNotWatched</a></span>
 
 
             </dd>
@@ -1016,7 +1018,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line76">line 76</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line140">line 140</a>
     </li></ul></dd>
     
 
@@ -1057,9 +1059,7 @@
 
 <div class="description">
     Adds the following object to the watchlist with the 
-                 given id. Although `objId`can be anyting, including 
-                 another object, it is recommended to use a Number or a 
-                 String instead.
+                 given id.
 </div>
 
 
@@ -1103,7 +1103,7 @@
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type"><a href="global.html#Id">Id</a></span>
 
 
             
@@ -1163,7 +1163,7 @@
     <dt>
         <div class="param-desc">
         If the watch list is already watching an 
-                                 object with the given `objId`.
+                                 object with the given <code>objId</code>.
         </div>
     </dt>
     <dd></dd>
@@ -1174,7 +1174,7 @@
             </dt>
             <dd>
                 
-<span class="param-type">ObjectAlreadyWatched</span>
+<span class="param-type"><a href="global.html#ObjectAlreadyWatched">ObjectAlreadyWatched</a></span>
 
 
             </dd>
@@ -1207,7 +1207,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sat Jun 24 2017 15:42:16 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Jun 26 2017 09:10:16 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

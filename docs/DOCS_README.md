@@ -13,6 +13,7 @@
 
 [![Build Status](https://travis-ci.org/Fl4m3Ph03n1x/obj-watcher.svg?branch=master)](https://travis-ci.org/Fl4m3Ph03n1x/obj-watcher)
 [![codecov](https://codecov.io/gh/Fl4m3Ph03n1x/obj-watcher/branch/master/graph/badge.svg)](https://codecov.io/gh/Fl4m3Ph03n1x/obj-watcher)
+[![Inline docs](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher.svg?branch=master)](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher)
 [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
 
 # What is `obj-watcher.js` ?
@@ -52,11 +53,10 @@ Run:
 
 Watch an object and `console.log` a message when it changes:
 
-        const watcherFactory = require("obj-watcher");
-        const watcher = watcherFactory();
+        const watcher = require("obj-watcher");
 
         watcher.watch("food", {fruit: "bananas"}); //watch it!
-        watcher.setOnChange("food", newObj => console.log(`I like ${newObj.fruit} better!`));
+        watcher.setOnChange("food", (oldObj, newObj) => console.log(`I like ${newObj.fruit} better!`));
 
         watcher.set("food", {fruit: "oranges"});
         //I like oranges better!
@@ -64,11 +64,10 @@ Watch an object and `console.log` a message when it changes:
 
 Watch an object and `console.log` a message when it changes and then unwatch it:
 
-        const watcherFactory = require("obj-watcher");
-        const watcher = watcherFactory();
+        const watcher = require("obj-watcher");
 
         watcher.watch("food", {fruit: "bananas"}); //watch it!
-        watcher.setOnChange("food", newObj => console.log(`I like ${newObj.fruit} better!`));
+        watcher.setOnChange("food", (oldObj, newObj) => console.log(`I like ${newObj.fruit} better!`));
 
         watcher.set("food", {fruit: "oranges"});
         //I like oranges better!
@@ -82,8 +81,7 @@ to test if objects were changed:
 
         const assert = require("assert");
         const sinon = require("sinon");
-        const watcherFactory = require("obj-watcher");
-        const watcher = watcherFactory();
+        const watcher = require("obj-watcher");
 
         const spy = sinon.spy();
         watcher.watch("food", {fruit: "bananas"}); //watch it!
