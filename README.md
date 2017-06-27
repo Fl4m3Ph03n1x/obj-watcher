@@ -55,7 +55,7 @@ Run:
 
  - [watch](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~watch)
  - [unwatch](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~unwatch)
- - [setOnChange](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~setOnChange)
+ - [onChange](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~onChange)
  - [get](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~get)
  - [set](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~set)
  - [reset](https://fl4m3ph03n1x.github.io/obj-watcher/module-watcher.html#~reset)

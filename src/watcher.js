@@ -18,7 +18,7 @@ const objectNotWatched = errors.objectNotWatched;
 /**
  *  @public
  *  @author Pedro Miguel P. S. Martins
- *  @version 2.0.2
+ *  @version 2.0.3
  *  @module watcher
  *  @desc   Watches over changes in objects and executes callbacks when those 
  *          changes happen.
