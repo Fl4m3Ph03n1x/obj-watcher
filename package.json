@@ -1,6 +1,6 @@
 {
   "name": "obj-watcher",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Small library that watches over changes in objects and executes callbacks.",
   "main": "./src/watcher.js",
   "directories": {
