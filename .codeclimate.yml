@@ -1,6 +1,0 @@
-## other configuration excluded from example...
-exclude_paths:
-- "coverage/"
-- "docs/"
-- "node_modules/"
-- "test/"
