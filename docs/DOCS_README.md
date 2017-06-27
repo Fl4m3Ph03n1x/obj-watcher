@@ -56,7 +56,7 @@ Watch an object and `console.log` a message when it changes:
         const watcher = require("obj-watcher");
 
         watcher.watch("food", {fruit: "bananas"}); //watch it!
-        watcher.setOnChange("food", (oldObj, newObj) => console.log(`I like ${newObj.fruit} better!`));
+        watcher.onChange("food", (oldObj, newObj) => console.log(`I like ${newObj.fruit} better!`));
 
         watcher.set("food", {fruit: "oranges"});
         //I like oranges better!
@@ -67,7 +67,7 @@ Watch an object and `console.log` a message when it changes and then unwatch it:
         const watcher = require("obj-watcher");
 
         watcher.watch("food", {fruit: "bananas"}); //watch it!
-        watcher.setOnChange("food", (oldObj, newObj) => console.log(`I like ${newObj.fruit} better!`));
+        watcher.onChange("food", (oldObj, newObj) => console.log(`I like ${newObj.fruit} better!`));
 
         watcher.set("food", {fruit: "oranges"});
         //I like oranges better!
@@ -84,8 +84,8 @@ to test if objects were changed:
         const watcher = require("obj-watcher");
 
         const spy = sinon.spy();
-        watcher.watch("food", {fruit: "bananas"}); //watch it!
-        watcher.setOnChange("food", spy);
+        watcher.watch("food", {fruit: "bananas"}); 
+        watcher.onChange("food", spy);
 
         watcher.set("food", {fruit: "oranges"});
         //I like oranges better!

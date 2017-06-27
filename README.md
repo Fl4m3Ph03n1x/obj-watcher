@@ -70,7 +70,7 @@ Watch an object and `console.log` a message when it changes:
         const watcher = require("obj-watcher");
 
         watcher.watch("food", {fruit: "bananas"}); //watch it!
-        watcher.setOnChange("food", (oldObj, newObj) => console.log(`I like ${newObj.fruit} better!`));
+        watcher.onChange("food", (oldObj, newObj) => console.log(`I like ${newObj.fruit} better!`));
 
         watcher.set("food", {fruit: "oranges"});
         //I like oranges better!
