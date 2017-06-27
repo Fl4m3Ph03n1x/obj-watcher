@@ -29,3 +29,4 @@ exclude_paths:
 - "docs/"
 - "node_modules/"
 - "test/"
+- "coverage.lcov"
