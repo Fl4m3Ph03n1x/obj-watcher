@@ -17,7 +17,6 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/595386cf368b080067233ec8/badge.svg)](https://www.versioneye.com/user/projects/595386cf368b080067233ec8)
 [![Code Climate](https://codeclimate.com/github/Fl4m3Ph03n1x/obj-watcher/badges/gpa.svg)](https://codeclimate.com/github/Fl4m3Ph03n1x/obj-watcher)
 [![Inline docs](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher.svg?branch=master)](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher)
-[![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 # What is `obj-watcher.js` ?

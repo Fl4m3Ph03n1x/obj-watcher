@@ -1,6 +1,6 @@
 {
   "name": "obj-watcher",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Small library that watches over changes in objects and executes callbacks.",
   "main": "./src/watcher.js",
   "directories": {
@@ -8,7 +8,6 @@
     "test": "test"
   },
   "scripts": {
-    "lint": "node_modules/.bin/goodparts path/to/files/for/linting",
     "test": "NODE_ENV=test nyc mocha --reporter spec test/*_spec.js || true",
     "doc": "./node_modules/.bin/jsdoc ./src/*.js -d ./docs -t ./node_modules/docdash -R ./docs/DOCS_README.md",
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov -t 1f88ca54-0113-48ff-bddf-c80a99d321fd"
@@ -33,7 +32,6 @@
   "devDependencies": {
     "chai": "^4.0.1",
     "docdash": "^0.4.0",
-    "goodparts": "^1.2.1",
     "jsdoc": "^3.4.3",
     "mocha": "^3.4.2",
     "nyc": "^11.0.1",
