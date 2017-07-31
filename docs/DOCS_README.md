@@ -1,16 +1,18 @@
-                        _     _                      _       _               
-                       | |   (_)                    | |     | |              
-                   ___ | |__  _ ________      ____ _| |_ ___| |__   ___ _ __
-                  / _ \| '_ \| |______\ \ /\ / / _` | __/ __| '_ \ / _ \ '__|
-                 | (_) | |_) | |       \ V  V / (_| | || (__| | | |  __/ |   
-                  \___/|_.__/| |        \_/\_/ \__,_|\__\___|_| |_|\___|_|   
-                            _/ |                                             
-                           |__/                                              
+<div align="center">
 
+    <a href="https://github.com/Fl4m3Ph03n1x/obj-watcher">
+        <img src="https://raw.githubusercontent.com/Fl4m3Ph03n1x/obj-watcher/master/logos/logo_no_wm.png">
+    </a>
 
+</div>
 
+<div align="center">
 
 [![NPM](https://nodei.co/npm/obj-watcher.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/obj-watcher/)
+
+</div>
+
+<div align="center">
 
 [![Build Status](https://travis-ci.org/Fl4m3Ph03n1x/obj-watcher.svg?branch=master)](https://travis-ci.org/Fl4m3Ph03n1x/obj-watcher)
 [![codecov](https://codecov.io/gh/Fl4m3Ph03n1x/obj-watcher/branch/master/graph/badge.svg)](https://codecov.io/gh/Fl4m3Ph03n1x/obj-watcher)
@@ -19,6 +21,7 @@
 [![Inline docs](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher.svg?branch=master)](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
+</div>
 
 # What is `obj-watcher.js` ?
 
