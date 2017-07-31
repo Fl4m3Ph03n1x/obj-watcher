@@ -1,6 +1,6 @@
 {
   "name": "obj-watcher",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Small library that watches over changes in objects and executes callbacks.",
   "main": "./src/watcher.js",
   "directories": {
@@ -30,12 +30,12 @@
   },
   "homepage": "https://github.com/Fl4m3Ph03n1x/obj-watcher#readme",
   "devDependencies": {
-    "chai": "^4.0.1",
+    "chai": "^4.1.0",
     "docdash": "^0.4.0",
-    "jsdoc": "^3.4.3",
+    "jsdoc": "^3.5.3",
     "mocha": "^3.4.2",
-    "nyc": "^11.0.1",
-    "sinon": "^2.3.2"
+    "nyc": "^11.1.0",
+    "sinon": "^2.4.1"
   },
   "dependencies": {
     "lodash.isfunction": "^3.0.8"
