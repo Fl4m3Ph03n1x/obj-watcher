@@ -5,6 +5,7 @@
 </div>
 
 <div align="center">
+
 [![NPM](https://nodei.co/npm/obj-watcher.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/obj-watcher/)
 
 [![Build Status](https://travis-ci.org/Fl4m3Ph03n1x/obj-watcher.svg?branch=master)](https://travis-ci.org/Fl4m3Ph03n1x/obj-watcher)
@@ -13,6 +14,7 @@
 [![Code Climate](https://codeclimate.com/github/Fl4m3Ph03n1x/obj-watcher/badges/gpa.svg)](https://codeclimate.com/github/Fl4m3Ph03n1x/obj-watcher)
 [![Inline docs](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher.svg?branch=master)](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+
 </div>
 
 # What is `obj-watcher.js` ?
