@@ -18,7 +18,7 @@
         "strict": [ "error" ],
         "no-iterator": [ "error" ],
         "no-with": [ "error" ],
-        "no-trailing-spaces": [ "error" ],
+        "no-trailing-spaces": [ "error", { "ignoreComments": true } ],
         "eqeqeq": [ "error", "always" ],
         "indent": [ "error", 4 ],
         "linebreak-style": [ "error", "unix" ],
