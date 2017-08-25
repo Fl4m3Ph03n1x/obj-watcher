@@ -1,5 +1,3 @@
-"use strict";
-
 const watcherLib = require("../src/watcher.js");
 
 const expect = require("chai")

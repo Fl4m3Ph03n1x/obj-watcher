@@ -10,6 +10,7 @@
     },
     "extends": "eslint:recommended",
     "rules": {
+        "global-require": [ "error" ],
         "no-useless-concat": [ "error" ],
         "prefer-template": [ "error" ],
         "no-template-curly-in-string": [ "error" ],
