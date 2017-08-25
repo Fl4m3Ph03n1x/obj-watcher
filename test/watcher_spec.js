@@ -1,12 +1,13 @@
 "use strict";
 
+const watcherLib = require("../src/watcher.js");
+
 const expect = require("chai")
     .expect;
 const sinon = require("sinon");
 
 describe("watcher", () => {
-
-    const watcher = Object.assign({}, require("../src/watcher.js"));
+    const watcher = Object.assign({}, watcherLib);
     const testObj = {
         online: false
     };
@@ -91,7 +92,7 @@ describe("watcher", () => {
     it("should call the callback with both the old object, and the new one", done => {
         watcher.watch("status", testObj);
         const newTestObj = {};
-        
+
         watcher.onChange("status", (oldObj, newObj) => {
             expect(oldObj).to.eql(testObj);
             expect(newObj).to.eql(newTestObj);
