@@ -26,9 +26,6 @@
         "semi": [ "error", "always" ],
         "no-console": 0,
         "no-var": [ "error" ],
-        "prefer-const": [
-            "error",
-            { "destructuring": "any", "ignoreReadBeforeAssign": false }
-        ]
+        "prefer-const": [ "error", { "destructuring": "any", "ignoreReadBeforeAssign": false } ]
     }
 }
