@@ -49,7 +49,7 @@
     <div class="container-overview">
     
         
-            <div class="description">Watches over changes in objects and executes callbacks when those 
+            <div class="description">Watches over changes in objects and executes callbacks when those
          changes happen.</div>
         
 
@@ -64,13 +64,13 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line18">line 18</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line14">line 14</a>
     </li></ul></dd>
     
 
     
     <dt class="tag-version">Version:</dt>
-    <dd class="tag-version"><ul class="dummy"><li>2.0.4</li></ul></dd>
+    <dd class="tag-version"><ul class="dummy"><li>2.0.5</li></ul></dd>
     
 
     
@@ -173,7 +173,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line84">line 84</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line80">line 80</a>
     </li></ul></dd>
     
 
@@ -214,8 +214,8 @@
 
 <div class="description">
     This function returns a **clone** of the object with the
-                 given object id. This happens so as to minize side 
-                 effects and prevents direct object manipulation to the 
+                 given object id. This happens so as to minize side
+                 effects and prevents direct object manipulation to the
                  object being watched.
 </div>
 
@@ -270,7 +270,7 @@
 
             
 
-            <td class="description last">The unique id of the object we 
+            <td class="description last">The unique id of the object we
                                          want to get.</td>
         </tr>
 
@@ -296,7 +296,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        If the watch list does not contain any 
+        If the watch list does not contain any
                                  object with the given <code>objId</code>.
         </div>
     </dt>
@@ -358,7 +358,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line130">line 130</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line126">line 126</a>
     </li></ul></dd>
     
 
@@ -398,8 +398,8 @@
 
 
 <div class="description">
-    Sets the callback for the given object. This callback 
-                 will be executed everytime the object changes via 
+    Sets the callback for the given object. This callback
+                 will be executed everytime the object changes via
                  the <code>set</code> method.
 </div>
 
@@ -454,7 +454,7 @@
 
             
 
-            <td class="description last">The id of the object to which we 
+            <td class="description last">The id of the object to which we
                                          want to attach a callback.</td>
         </tr>
 
@@ -478,8 +478,8 @@
 
             
 
-            <td class="description last">The callback to be executed when 
-                                         the object changes via the 
+            <td class="description last">The callback to be executed when
+                                         the object changes via the
                                          <code>set</code> method.</td>
         </tr>
 
@@ -505,8 +505,8 @@
 <dl>
     <dt>
         <div class="param-desc">
-        If the watch list does not 
-                                         contain any object with the 
+        If the watch list does not
+                                         contain any object with the
                                          given <code>objId</code>.
         </div>
     </dt>
@@ -534,7 +534,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        If the provided callback 
+        If the provided callback
                                          parameter is not a function.
         </div>
     </dt>
@@ -578,7 +578,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line159">line 159</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line155">line 155</a>
     </li></ul></dd>
     
 
@@ -663,7 +663,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line104">line 104</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line100">line 100</a>
     </li></ul></dd>
     
 
@@ -703,10 +703,10 @@
 
 
 <div class="description">
-    Replaces the object currently being watched with the 
+    Replaces the object currently being watched with the
                  given one. If your code has references affecting the old
-                 object (which is very unlikely given that you always 
-                 work with clones) they will be lost. Calls the object's 
+                 object (which is very unlikely given that you always
+                 work with clones) they will be lost. Calls the object's
                  callback passing the new object as an argument.
 </div>
 
@@ -761,7 +761,7 @@
 
             
 
-            <td class="description last">The id of the object we want to 
+            <td class="description last">The id of the object we want to
                                          replace.</td>
         </tr>
 
@@ -785,7 +785,7 @@
 
             
 
-            <td class="description last">The new object that will replace the 
+            <td class="description last">The new object that will replace the
                                  current object with the id.</td>
         </tr>
 
@@ -811,7 +811,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        If the watch list does not contain any 
+        If the watch list does not contain any
                                  object with the given <code>objId</code>.
         </div>
     </dt>
@@ -855,7 +855,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line67">line 67</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line63">line 63</a>
     </li></ul></dd>
     
 
@@ -950,7 +950,7 @@
 
             
 
-            <td class="description last">The object that will be 
+            <td class="description last">The object that will be
                                          unwatched.</td>
         </tr>
 
@@ -976,7 +976,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        If the watch list does not contain any 
+        If the watch list does not contain any
                                  object with the given <code>objId</code>.
         </div>
     </dt>
@@ -1020,7 +1020,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line37">line 37</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -1060,7 +1060,7 @@
 
 
 <div class="description">
-    Adds the following object to the watchlist with the 
+    Adds the following object to the watchlist with the
                  given id.
 </div>
 
@@ -1115,7 +1115,7 @@
 
             
 
-            <td class="description last">The unique id of the object we want 
+            <td class="description last">The unique id of the object we want
                                      to watch over.</td>
         </tr>
 
@@ -1164,7 +1164,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        If the watch list is already watching an 
+        If the watch list is already watching an
                                  object with the given <code>objId</code>.
         </div>
     </dt>
@@ -1210,7 +1210,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line28">line 28</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -1251,8 +1251,8 @@
 
 <div class="description">
     The unique id of the object we want to  watch over.
-                         Can be anything, althout I strongly recommend it to 
-                         be a primitive type, such as a <code>string</code>, 
+                         Can be anything, althout I strongly recommend it to
+                         be a primitive type, such as a <code>string</code>,
                          or a <code>number</code>.
 </div>
 
@@ -1290,7 +1290,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line12">line 12</a>
+        <a href="watcher.js.html">watcher.js</a>, <a href="watcher.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -1441,7 +1441,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a> on Mon Jul 31 2017 10:31:28 GMT+0200 (CEST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Sep 14 2017 11:01:25 GMT+0200 (CEST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
