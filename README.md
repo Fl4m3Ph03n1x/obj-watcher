@@ -1,5 +1,5 @@
 <div align="center">
-    <a href="https://github.com/Fl4m3Ph03n1x/obj-watcher">
+    <a href="https://fl4m3ph03n1x.github.io/obj-watcher/">
         <img src="./logos/logo_no_wm.png">
     </a>
 </div>
