@@ -18,6 +18,7 @@
 [![codecov](https://codecov.io/gh/Fl4m3Ph03n1x/obj-watcher/branch/master/graph/badge.svg)](https://codecov.io/gh/Fl4m3Ph03n1x/obj-watcher)
 [![Dependency Status](https://www.versioneye.com/user/projects/595386cf368b080067233ec8/badge.svg)](https://www.versioneye.com/user/projects/595386cf368b080067233ec8)
 [![Code Climate](https://codeclimate.com/github/Fl4m3Ph03n1x/obj-watcher/badges/gpa.svg)](https://codeclimate.com/github/Fl4m3Ph03n1x/obj-watcher)
+[![Known Vulnerabilities](https://snyk.io/test/github/fl4m3ph03n1x/obj-watcher/badge.svg)](https://snyk.io/test/github/fl4m3ph03n1x/obj-watcher)
 [![Inline docs](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher.svg?branch=master)](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Fl4m3Ph03n1x/obj-watcher/issues)
 </div>
