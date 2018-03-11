@@ -29,6 +29,7 @@ const watcherFactory = () => {
      */
 
     const watchMap = new Map();
+    const isObjWatched = objName => watchMap.has(objName);
 
     /**
      *  @public
@@ -117,10 +118,11 @@ const watcherFactory = () => {
         if (!isObjWatched(objId))
             throw objectNotWatched(objId);
 
-        const entry = watchMap.get(objId);
-        const oldObj = Object.assign({}, entry.obj);
-        entry.obj = Object.assign({}, newObj);
-        entry.onChange(oldObj, entry.obj);
+        const oldEntry = watchMap.get(objId);
+        const newEntry = Object.assign({}, oldEntry, { obj: newObj });
+
+        watchMap.set(objId, newEntry);
+        newEntry.onChange(oldEntry.obj, newEntry.obj); //call onChange with both objects
     };
 
     /**
@@ -162,8 +164,6 @@ const watcherFactory = () => {
     const reset = () => {
         watchMap.clear();
     };
-
-    const isObjWatched = objName => watchMap.has(objName);
 
     return Object.freeze({
         watch,
