@@ -10,7 +10,7 @@
 
 [![Build Status](https://travis-ci.org/Fl4m3Ph03n1x/obj-watcher.svg?branch=master)](https://travis-ci.org/Fl4m3Ph03n1x/obj-watcher)
 [![codecov](https://codecov.io/gh/Fl4m3Ph03n1x/obj-watcher/branch/master/graph/badge.svg)](https://codecov.io/gh/Fl4m3Ph03n1x/obj-watcher)
-[![Dependency Status](https://david-dm.org/Fl4m3Ph03n1x/obj-watcher.svg)](https://david-dm.org)
+[![Dependency Status](https://david-dm.org/Fl4m3Ph03n1x/obj-watcher.svg)](https://david-dm.org/Fl4m3Ph03n1x/obj-watcher)
 [![Code Climate](https://codeclimate.com/github/Fl4m3Ph03n1x/obj-watcher/badges/gpa.svg)](https://codeclimate.com/github/Fl4m3Ph03n1x/obj-watcher)
 [![Known Vulnerabilities](https://snyk.io/test/github/fl4m3ph03n1x/obj-watcher/badge.svg)](https://snyk.io/test/github/fl4m3ph03n1x/obj-watcher)
 [![Inline docs](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher.svg?branch=master)](http://inch-ci.org/github/Fl4m3Ph03n1x/obj-watcher)
